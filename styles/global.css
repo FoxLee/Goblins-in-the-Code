@@ -1,0 +1,38 @@
+.blades-in-the-dark .window-content{
+	font-family:'Zilla Slab';
+	font-weight:300;
+	background:#e5e5e5;
+	color:#2b2c31;
+}
+.blades-in-the-dark.sheet :is(.label-stripe,.black-label),
+.blades-in-the-dark.sheet .stripe>.attribute-label{
+	text-transform:uppercase;
+	font-family:Kirsty,serif;
+	font-size:0.8em;
+	font-weight:600;
+	margin-bottom: 2px;
+    padding:2px;
+    height:1.4em !important;
+}
+.blades-in-the-dark input[type="text"],
+.blades-in-the-dark input[type="number"],
+.blades-in-the-dark input[type="password"],
+.blades-in-the-dark input[type="date"],
+.blades-in-the-dark input[type="time"],
+.blades-in-the-dark input[type="search"]{
+	background:rgba(0,0,0,0.1);
+    border-top-color:rgba(0,0,0,0.1);
+    border-bottom-color:rgba(255,255,255,0.5);
+	border-left:unset;
+    border-right:unset;
+}
+
+/* Visual Active Effects support */
+.panel.visual-active-effects{
+	font-family:'Zilla Slab';
+	--vae-name-font:Kirsty,serif;
+	font-weight:300;
+}
+.panel.visual-active-effects .effect-intro{
+	font-family:'Zilla Slab';
+}

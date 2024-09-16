@@ -1,0 +1,71 @@
+<div id="character-{{_id}}-attributes" class="attributes">
+
+  {{#each system.attributes as |attribute attribute_name|}}
+
+  <div id="character-{{../_id}}-attributes-{{attribute_name}}" class="attribute">
+    <div id="character-{{../_id}}-attributes-{{attribute_name}}-title" class="attributes-exp">
+      <div class="stripe">
+        <!-- <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="{{attribute_name}}">{{localize (concat attribute.label 'Short')}}</a> -->
+		<a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="{{attribute_name}}" data-tooltip="{{localize 'GoblinStyle.Hint.Roll'}} {{localize attribute.label}}">{{localize attribute.label}}</a>
+      </div>
+      <div class="stripe-tooth-body">
+        {{#multiboxes attribute.exp}}
+
+        <label
+                for="{{../_id}}-{{attribute_name}}-exp-0"><i
+                class="fa fa-refresh nullifier"	data-tooltip="{{localize 'GoblinStyle.Hint.Reset'}} {{localize 'GoblinStyle.Hint.XPTrack'}}"></i></label>
+        <input type="radio" id="{{../_id}}-{{attribute_name}}-exp-0"
+               name="system.attributes.{{attribute_name}}.exp" value="0" checked="checked">
+        {{#times_from 1 attribute.exp_max}}
+          <input type="radio" id="{{../../_id}}-{{attribute_name}}-exp-{{this}}"
+                 name="system.attributes.{{attribute_name}}.exp" value="{{this}}">
+          <label for="{{../../_id}}-{{attribute_name}}-exp-{{this}}" data-tooltip="{{localize 'GoblinStyle.Hint.UpdateXP'}}"></label>
+        {{/times_from}}
+        {{/multiboxes}}
+      </div>
+    </div>
+
+    {{!-- Skills --}}
+
+    {{#each attribute.skills as |skill skill_name|}}
+
+    <div class="flex-horizontal">
+      <div class="attributes-container">
+
+        {{#multiboxes skill.value}}
+
+        {{#times_from 0 skill.max}}
+        <input {{#if (lteq this (oneless skill.min))}}disabled {{/if}}
+			type="radio" id="attributes-{{../../../_id}}-{{skill_name}}-{{this}}" data-dtype="Number"
+            name="system.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="{{this}}">
+        <label {{#if (and (gt skill.min 0) (lteq this skill.min))}}
+				data-tooltip="{{localize 'BITD.DisabledByAE'}}"
+			{{else}}
+				{{#if (lteq this 0)}}
+					data-tooltip="{{localize 'GoblinStyle.Hint.Reset'}} {{localize 'GoblinStyle.Hint.skillRank'}}"
+				{{else}}
+					data-tooltip="{{localize 'GoblinStyle.Hint.Set'}} {{localize 'GoblinStyle.Hint.skillRank'}}"
+				{{/if}}
+			{{/if}}
+			{{#if (lteq this (oneless skill.min))}}class="disallowed" {{/if}}
+			for="attributes-{{../../../_id}}-{{skill_name}}-{{this}}">{{#if (lteq this 0)}}0{{/if}}
+        </label>
+        {{/times_from}}
+		
+		{{#if (eq skill.max 3)}}
+		    <input type="radio" id="attributes-{{../../../_id}}-{{skill_name}}-{{this}}" data-dtype="Number"
+            name="system.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="{{this}}">
+			<label data-tooltip="{{localize "BITD.NoMastery"}}" class="disallowed no-mastery"></label>
+		{{/if}}
+
+        <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}" data-tooltip="{{localize 'GoblinStyle.Hint.Roll'}} {{localize skill.label}}">{{localize skill.label}}</div>
+        {{/multiboxes}}
+      </div>
+    </div>
+    {{/each}}
+
+  </div>
+  {{/each}}
+
+
+</div>

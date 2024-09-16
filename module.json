@@ -1,0 +1,67 @@
+{
+	"title": "Goblins in the Code",
+	"id": "fox-goblins-in-the-code",
+	"description": "Accessibility/styling tweaks for Blades in the Dark",
+	"url": "",
+	"manifest": "",
+	"download": "",
+	"license": "",
+	"readme": "",
+	"bugs": "",
+	"authors": [{
+		"name": "Fox Lee",
+		"discord": "TheArtGremblin",
+		"email": "fox@invincible.ink",
+		"url": "https://www.invincible.ink"
+	}],
+	"version": "1.0",
+	"compatibility": {
+		"minimum": "11",
+		"verified": "11.315"
+	},
+	"relationships": {
+		"systems": [
+			{
+				"id": "blades-in-the-dark",
+				"type": "system",
+				"manifest": "https://raw.githubusercontent.com/Dez384/foundryvtt-blades-in-the-dark/master/system.json",
+				"compatibility": {
+					"minimum": "5",
+					"verified": "5.2"
+				}
+			}
+		]
+	},
+	"esmodules": [
+		"main.js",
+		"pc-sheet.js"
+	],
+	"languages": [
+	{
+		"lang": "en",
+		"name": "English",
+		"path": "lang/en-us.json",
+		"flags": {}
+	},
+	{
+		"lang": "en-AU",
+		"name": "English",
+		"path": "lang/en-au.json",
+		"flags": {}
+	}
+	],
+	"styles": [
+		"styles/sheets.css",
+		"styles/webfonts.css"
+	],
+	"hotReload": {
+		"extensions": [
+			"css",
+			"html"
+		],
+		"paths": [
+			"styles/",
+			"templates/"
+		]
+	}
+}

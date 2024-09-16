@@ -1,0 +1,1297 @@
+/***************************************************/
+/*         ALL SHEETS                              */
+/***************************************************/
+
+.blades-in-the-dark.goblins.sheet{
+	min-width:8em;
+	min-height:8em;
+}
+.blades-in-the-dark.goblins.sheet .window-content{
+	font-family:'Zilla Slab';
+	font-weight:300;
+	background:#e5e5e5;
+	color:#2b2c31;
+}
+.blades-in-the-dark.goblins.sheet.mobile .window-content{
+	font-size:1.3em;
+}
+.blades-in-the-dark.goblins.sheet .window-resizable-handle{
+	z-index:5;
+}
+.blades-in-the-dark section > *:not(.label-stripe){
+    margin-right:initial;
+}
+.blades-in-the-dark.goblins.sheet :is(.label-stripe,.black-label),
+.blades-in-the-dark.goblins.sheet .stripe>.attribute-label{
+	text-transform:uppercase;
+	font-family:Kirsty,serif;
+	font-size:0.8em;
+	font-weight:600;
+	margin-bottom: 2px;
+    padding:2px;
+    height:1.4em !important;
+}
+.blades-in-the-dark.actor.goblins.sheet .big-teeth-section > *{
+   margin-right:unset;
+}
+.blades-in-the-dark.goblins.sheet .tooth-bg{
+	background:-webkit-gradient(linear, left top, left bottom, from(#0d0e13), color-stop(80%, #2b2c31));
+	background:-o-linear-gradient(top, #0d0e13, #2b2c31 80%);
+	background:linear-gradient(180deg, #0d0e13, #2b2c31 80%);
+	position:relative;
+}
+.blades-in-the-dark.goblins.sheet .tooth-bg::before{
+	content:'';
+	background:-webkit-gradient(linear, left top, left bottom, from(#0d0e13), color-stop(80%, #2b2c31));
+	background:-o-linear-gradient(top, #0d0e13, #2b2c31 80%);
+	background:linear-gradient(180deg, #0d0e13, #2b2c31 80%);
+	-webkit-transform:skewY(-8.5deg);
+	    -ms-transform:skewY(-8.5deg);
+	        transform:skewY(-8.5deg);
+	-webkit-transform-origin:100%;
+	    -ms-transform-origin:100%;
+	        transform-origin:100%;
+	-webkit-transition:bottom .15s;
+	-o-transition:bottom .15s;
+	transition:bottom .15s;
+	position:absolute;
+	height:100%;
+	left:0;
+	right:0;
+}
+.blades-in-the-dark.goblins.actor.pc .teeth-experience label{
+	background-image:url('../images/ui/tooth-orange.png');
+}
+.blades-in-the-dark.actor.goblins.sheet .big-teeth-section .big-teeth label{
+	background-image:url('../images/ui/tooth-orange.png');
+}
+.blades-in-the-dark.goblins.actor.pc .teeth-experience input:checked ~ label{
+	background-image:url('../images/ui/tooth-white.png');
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .big-teeth input:checked ~ label{
+	background-image:url('../images/ui/tooth-white.png');
+}
+.blades-in-the-dark.goblins .nullifier{
+	-webkit-transform:scaleX(-100%);
+	    -ms-transform:scaleX(-100%);
+	        transform:scaleX(-100%);
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .small-teeth-container .small-teeth-wrap label[for$="-0"]{
+	height:1rem !important;
+}
+.blades-in-the-dark.goblins.actor.pc .teeth-experience label[for$="-0"] i{
+	margin-top:50%;
+}
+.blades-in-the-dark.goblins.sheet input[type="text"],
+.blades-in-the-dark.goblins.sheet input[type="number"],
+.blades-in-the-dark.goblins.sheet input[type="password"],
+.blades-in-the-dark.goblins.sheet input[type="date"],
+.blades-in-the-dark.goblins.sheet input[type="time"],
+.blades-in-the-dark.goblins.sheet input[type="search"]{
+	background:rgba(0,0,0,0.1);
+    border-top-color:rgba(0,0,0,0.1);
+    border-bottom-color:rgba(255,255,255,0.5);
+	border-left:unset;
+    border-right:unset;
+	width:100%;
+}
+.blades-in-the-dark.goblins.sheet textarea{
+	background:rgba(0,0,0,0.1);
+    border-top-color:rgba(0,0,0,0.1);
+    border-bottom-color:rgba(255,255,255,0.5);
+	border-left:unset;
+    border-right:unset;
+	margin:unset;
+	min-height:unset;
+}
+.blades-in-the-dark.goblins.sheet input[type="text"],
+.blades-in-the-dark.goblins.sheet textarea{
+    padding:1px 4px;
+    height:auto;
+}
+.blades-in-the-dark.goblins.sheet table{
+	border:unset;
+	background:unset;
+}
+.blades-in-the-dark.goblins.sheet table thead{
+	border:unset;
+	background:#bcbec0;
+	color:#2b2c31;
+	text-shadow:unset;
+}
+.blades-in-the-dark.goblins.sheet .clock-zero-label{
+    position:absolute;
+}
+.blades-in-the-dark.goblins.sheet .item .item-control{
+	-ms-flex-preferred-size:1.2em;
+	    flex-basis:1.2em;
+	-webkit-box-flex:0;
+	    -ms-flex-positive:0;
+	        flex-grow:0;
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+	text-align:center;
+}
+.blades-in-the-dark.goblins.sheet .item-buttons{
+	display:flex;
+	align-items:center;
+}
+.blades-in-the-dark.goblins.sheet :is(.item,.effect) :is(.item-control,.effect-control){
+	opacity:50%;
+}
+.blades-in-the-dark.goblins.sheet :is(.item,.effect) :is(.item-control,.effect-control):is(:hover,:active,:focus){
+	opacity:100%;
+}
+.blades-in-the-dark.actor.pc * .item .item-body *{
+	margin:initial;
+}
+.blades-in-the-dark.goblins.sheet .autosize{
+	position:relative;
+	display:inline-block;
+}
+.blades-in-the-dark.goblins.sheet .autosize>input{
+	position:absolute;
+	width:100%;
+	height:100%;
+	padding:0;
+	display:inline-block;
+	opacity:0;
+}
+.blades-in-the-dark.goblins.sheet .autosize .ruler{
+	pointer-events:none;
+}
+.blades-in-the-dark.goblins.sheet .autosize input:focus+.ruler{
+	opacity:0;
+}
+.blades-in-the-dark.goblins.sheet .autosize>input[value=""],
+.blades-in-the-dark.goblins.sheet .autosize>input:focus{
+	opacity:1;
+}
+.blades-in-the-dark.goblins.sheet .super-skinny-only{
+	display:none;
+}
+.blades-in-the-dark.goblins.sheet .super-skinny .super-skinny-only{
+	display:initial;
+}
+
+/***************************************************/
+/*         SCOUNDREL SHEET                         */
+/***************************************************/
+
+.blades-in-the-dark.goblins.actor.pc form.actor-sheet{
+    padding:0;
+}
+.blades-in-the-dark.goblins.actor.pc .flex-horizontal{
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+}
+.blades-in-the-dark.goblins.actor.pc .blades-clock.clock-4.clock-4-0{
+	background-image:url('../images/ui/4clock_4-0.svg') !important;
+}
+.blades-in-the-dark.goblins.actor.pc .blades-clock.clock-4.clock-4-1{
+	background-image:url('../images/ui/4clock_4-1.svg') !important;
+}
+.blades-in-the-dark.goblins.actor.pc .blades-clock.clock-4.clock-4-2{
+	background-image:url('../images/ui/4clock_4-2.svg') !important;
+}
+.blades-in-the-dark.goblins.actor.pc .blades-clock.clock-4.clock-4-3{
+	background-image:url('../images/ui/4clock_4-3.svg') !important;
+}
+.blades-in-the-dark.goblins.actor.pc .blades-clock.clock-4.clock-4-4{
+	background-image:url('../images/ui/4clock_4-4.svg') !important;
+}
+
+/*---------- Header Banner ----------*/
+.blades-in-the-dark.goblins.actor.pc .header-banner{
+	position:relative;
+	color:#eeefff;
+	z-index:4;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+.blades-in-the-dark.goblins.actor.pc .banner-text::before{
+    content:'';
+	width:calc(100% + 108px);
+    height:100%;
+    display:block;
+    position:absolute;
+    left:-108px;
+    background:#0d0e13;
+	z-index:-1;
+}
+.blades-in-the-dark.goblins.actor.pc .header-banner div.portrait{
+	-webkit-box-flex:0;
+	    -ms-flex-positive:0;
+	        flex-grow:0;
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+	-ms-flex-preferred-size:100px;
+	    flex-basis:100px;
+	position:relative;
+}
+.blades-in-the-dark.goblins.actor.pc .header-banner .portrait>img{
+	display:block;
+	position:relative;
+	border:unset;
+    -o-object-fit:contain;
+       object-fit:contain;
+	aspect-ratio:1/1;
+}
+.blades-in-the-dark.goblins.actor.pc .header-banner .portrait>img.portrait{
+	border-radius:100%;
+	display:block;
+	position:relative;
+}
+.blades-in-the-dark.goblins.actor.pc .header-banner .portrait::after{
+	content:'';
+	width:calc(100% + 10px);
+	height:calc(100% + 10px);
+	display:block;
+	position:absolute;
+	pointer-events:none;
+	background:url('../images/ui/ring.png') no-repeat;
+    background-size:contain;
+    top:-5px;
+    left:-5px;
+}
+.blades-in-the-dark.goblins.actor.pc .banner-text{
+	position:relative;
+	-ms-flex-preferred-size:calc(100% - 100px);
+	    flex-basis:calc(100% - 100px);
+    min-height:5.45em;
+	padding:0.75em 0.75em 0.75em 0;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+.blades-in-the-dark.goblins.actor.pc .banner-text>div{
+	-ms-flex-preferred-size:50%;
+	    flex-basis:50%;
+	-webkit-box-flex:2;
+	    -ms-flex-positive:2;
+	        flex-grow:2;
+	-ms-flex-negative:2;
+	    flex-shrink:2;
+}
+.blades-in-the-dark.goblins.actor.pc .handles{
+	-ms-flex-preferred-size:50%;
+	    flex-basis:50%;
+}
+.blades-in-the-dark.goblins.actor.pc div:is(.name,.alias){
+    margin-bottom:0;
+	display:block;
+	min-height:0.75em;
+}
+.blades-in-the-dark.goblins.actor.pc input:is(.name,.alias){
+    margin-bottom:0;
+	color:#eeefff;
+	background:unset;
+	border:unset;
+	max-width:100%;
+	padding:unset;
+}
+.blades-in-the-dark.goblins.actor.pc div.alias{
+	font-family:Kirsty,serif;
+    font-size:2.2em;
+    line-height:0.75;
+}
+.blades-in-the-dark.goblins.actor.pc input.alias{
+    height:31.5px;
+}
+.blades-in-the-dark.goblins.actor.pc div.name{
+    font-size:1.4em;
+	min-height:1em;
+}
+.blades-in-the-dark.goblins.actor.pc :is(.name,.alias) label{
+    display:none;
+}
+.blades-in-the-dark.goblins.actor.pc .job{
+	text-align:right;
+}
+.blades-in-the-dark.goblins.actor.pc .job .item-body{
+	margin-bottom:unset;
+}
+.blades-in-the-dark.goblins.actor.pc .item-class-label{
+	text-transform:uppercase;
+	font-weight:700;
+	font-size:0.75em;
+	margin-bottom:unset;
+	text-align:right;
+	margin-right:0.6em;
+}
+.blades-in-the-dark.goblins.actor.pc .crew .item-name,
+.blades-in-the-dark.goblins.actor.pc .crew .item-class-label{
+	text-transform:unset;
+	font-size:1.3em;
+	text-align:right;
+	font-weight:300;
+	margin-right:0;
+	font-weight:600;
+}
+.blades-in-the-dark.goblins.actor.pc .crew .item-class-label{
+	opacity:30%;
+}
+.blades-in-the-dark.goblins.actor.pc .playbook .item-name,
+.blades-in-the-dark.goblins.actor.pc .playbook .item-class-label{
+	text-transform:unset;
+	font-size:1.6em;
+	font-family:Kirsty,serif;
+	text-align:right;
+	font-weight:300;
+	margin-right:0;
+}
+.blades-in-the-dark.goblins.actor.pc .playbook .item-class-label{
+	opacity:30%;
+}
+.blades-in-the-dark.goblins.actor.pc .job .item{
+	position:relative;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+.blades-in-the-dark.goblins.actor.pc .job .item-buttons{
+	margin-left:0.3em;
+	-webkit-box-flex:0;
+	    -ms-flex-positive:0;
+	        flex-grow:0;
+}
+.blades-in-the-dark.goblins.actor.pc .job .item-buttons>a{
+	font-size:0.6em;
+	display:block;
+}
+.blades-in-the-dark.actor.pc :is(.crew,.playbook) .item+.item-class-label{
+	display:none;
+}
+.blades-in-the-dark.goblins.actor.pc .crew .item-buttons .item-post{
+	display:none;
+}
+
+/*---------- UPPER PANEL ----------*/
+.blades-in-the-dark.goblins.actor.pc section.upper{
+	-webkit-box-align:start;
+	    -ms-flex-align:start;
+	        align-items:flex-start;
+	margin-bottom:1em;
+}
+
+/*---------- UPPER PANEL ----------*/
+/*---------- Attributes & Skills ----------*/
+.blades-in-the-dark.goblins.actor.pc .attributes-panel{
+	-ms-flex-preferred-size:150px;
+	    flex-basis:150px;
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+	-webkit-box-flex:0;
+	    -ms-flex-positive:0;
+	        flex-grow:0;
+	background:#bcbec0;
+	margin-top:-1em;
+	padding-top:0.5em;
+	font-size:0.8em;
+	margin-bottom:1.5em;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes-panel::before{
+	background:#bcbec0;
+	margin-top:-0.5em;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes{
+	position:relative;
+	z-index:1;
+	width:unset;
+}
+.blades-in-the-dark.goblins.actor.pc .attribute{
+	margin-top:1em;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes .stripe{
+	font-size:1.4em;
+}
+.blades-in-the-dark.goblins.actor.pc .attribute .stripe>.attribute-label{
+    display:inline-block;
+    height:1em !important;
+    padding:0;
+    margin-bottom:unset;
+    position:relative;
+    top:-1px;
+}
+.blades-in-the-dark.goblins.actor.pc .attribute>div:not(:first-child){
+	padding-left:0.5em;
+	padding-right:0.5em;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes .attributes-container *{
+    margin-right:2px;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes .attribute-skill-label{
+	margin-left:4px;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes .attributes-container label{
+    height:13px;
+    width:13px;
+    border:unset;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes .attributes-container label.disallowed{
+	filter:unset;
+	opacity:unset;
+	cursor:not-allowed;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes .attributes-container label.disallowed.no-mastery{
+	background:rgba(255,255,255,0.3);
+}
+.blades-in-the-dark.goblins.actor.pc .attributes .attributes-container{
+    margin:1.5px 0px;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes .attributes-container label[for$="-0"]{
+    height:8px;
+    width:8px;
+	background:unset !important;
+	border-radius:0;
+    font-size:0.8em;
+	position:relative;
+    top:1.5px;
+	font-family:fixed;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes .attributes-exp .stripe-tooth-body label[for$="-0"]{
+    position:absolute;
+    left:-1.3em;
+    bottom:-1px;
+    color:#2b2c31;
+    font-size:0.8em;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes .attributes-resolve{
+	margin-bottom:-0.5em;
+}
+.blades-in-the-dark.goblins.actor.pc .attributes .attributes-exp .stripe-tooth-body input:checked + label,
+.blades-in-the-dark.goblins.actor.pc .attributes .attributes-exp .stripe-tooth-body label{
+    background-image:url(../images/ui/tooth-orange.png);
+}
+
+/*---------- UPPER PANEL ----------*/
+/*---------- Right pane ----------*/
+.blades-in-the-dark.goblins.actor.pc section.upper-right{
+	-ms-flex-preferred-size:calc(100% - 160px);
+	    flex-basis:calc(100% - 160px);
+	max-width:calc(100% - 160px);
+	-ms-flex-negative:100;
+	    flex-shrink:100;
+}
+
+/*---------- Personal ----------*/
+.blades-in-the-dark.goblins.actor.pc .personal .item{
+	position:relative;
+	-ms-flex-preferred-size:5em;
+	    flex-basis:5em;
+	-webkit-box-flex:10;
+	    -ms-flex-positive:10;
+	        flex-grow:10;
+	-ms-flex-negative:10;
+	    flex-shrink:10;
+	margin-bottom:0;
+	-ms-flex-wrap:unset;
+	    flex-wrap:unset;
+}
+.blades-in-the-dark.goblins.actor.pc .personal .item-body{
+	-ms-flex-preferred-size:6em;
+	    flex-basis:6em;
+	-webkit-box-flex:10;
+	    -ms-flex-positive:10;
+	        flex-grow:10;
+	-ms-flex-negative:2;
+	    flex-shrink:2;
+	margin-bottom:0;
+}
+.blades-in-the-dark.goblins.actor.pc .personal .item-name{
+	text-transform:uppercase;
+	font-size: 0.75em;
+}
+.blades-in-the-dark.goblins.actor.pc .personal .item-class-label{
+	font-weight:700;
+	margin-right:2px;
+}
+.blades-in-the-dark.goblins.actor.pc .personal .item-control{
+	font-size:0.75em;
+}
+.blades-in-the-dark.goblins.actor.pc .personal div.item-desc{
+	background:rgba(0,0,0,0.1);
+    border-top:1px solid rgba(0,0,0,0.1);
+    border-bottom:1px solid rgba(255,255,255,0.5);
+	padding:0 2px;
+    width:100%;
+	font-weight:400;
+}
+.blades-in-the-dark.goblins.actor.pc .personal .item-edit{
+	cursor:pointer;
+}
+.blades-in-the-dark.goblins.actor.pc .personal div.item-desc p{
+	display:inline;
+	margin-right:0;
+}
+.blades-in-the-dark.goblins.actor.pc .personal .item-header{
+	-webkit-box-align:end;
+	    -ms-flex-align:end;
+	        align-items:flex-end;
+	margin-top:2px;
+}
+
+/*---------- Stress & Trauma ----------*/
+.blades-in-the-dark.goblins.actor.pc .status .stress-trauma{
+	position:relative;
+	z-index:1;
+	gap:0.4em;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list label{
+	font-size:inherit;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .big-teeth label:not(.black-label,.label-stripe),
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .small-teeth-container .small-teeth-wrap label:not(.black-label,.label-stripe){
+	width:10px;
+	background-size:cover;
+	background-position:100% 100%;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .big-teeth label:not(.black-label,.label-stripe){
+	height:28px;
+    -webkit-box-sizing:content-box;
+            box-sizing:content-box;
+    border-top:0.4em solid black;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .character-stress{
+	position:relative;
+	margin-bottom:0.5em;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .character-stress .teeth-header{
+	position:absolute;
+	width:100%;
+	top:-0.2em;
+	left:0;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma,
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list{
+    -ms-flex-preferred-size:50%;
+        flex-basis:50%;
+    -ms-flex-negative:4;
+        flex-shrink:4;
+    -webkit-box-flex:4;
+        -ms-flex-positive:4;
+            flex-grow:4;
+	position:relative;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-container{
+	position:relative;
+	top:-0.2em;
+}
+.blades-in-the-dark.goblins.actor.pc .trauma-container .big-teeth-section .small-teeth-container .small-teeth-wrap label[for$="-0"]{
+	height:auto !important;
+}
+.blades-in-the-dark.goblins.actor.pc .trauma-container .black-label{
+	margin-bottom:0;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-container.small-teeth-container .small-teeth-wrap label:not(.black-label,.label-stripe){
+	height:22px;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list{
+	height:auto;
+	position:relative;
+	-ms-flex-preferred-size:50%;
+	    flex-basis:50%;
+	-ms-flex-negative:10;
+	    flex-shrink:10;
+	-webkit-box-flex:10;
+	    -ms-flex-positive:10;
+	        flex-grow:10;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:start;
+        -ms-flex-pack:start;
+            justify-content:flex-start;
+	padding:0.8em 4px 6px;
+	top:-2.8px;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list .toggle{
+	position:absolute;
+	right:0;
+	display:block;
+	pointer-events:none;
+	width:100%;
+	text-align:right;
+	background:#0d0e13;
+	color:#eeefff;
+	font-size:13.1px;
+	top:0;
+	padding-right:4px;
+	height:1rem;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list label {
+	margin-right:unset;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list label .checkmark{
+	text-transform:uppercase;
+	font-size:0.75em;
+	line-height:1;
+	display:none;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list label input:checked ~ .checkmark{
+	color:inherit;
+	margin-right:6px;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list:focus-within{
+	max-height:unset;
+	position:absolute;
+	background:#0d0e13;
+	padding:0 6px 4px;
+	width:calc(100% - 1.2em);
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list:focus-within::after{
+	content:'\1f7aa';
+	display:block;
+	height:100%;
+	width:1.2em;
+	position:absolute;
+	right:-1.2em;
+	pointer-events:none;
+	background:#0d0e13;
+	color:#eeefff;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list:focus-within .toggle{
+	display:none;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list:focus-within label .checkmark,
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list label input:checked ~ .checkmark{
+	display:initial;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list:focus-within label .checkmark{
+	color:#eeefff;
+	margin-right:6px;
+}
+.blades-in-the-dark.goblins.actor.pc .big-teeth-section .trauma-list:focus-within label input:checked ~ .checkmark{
+	color:red;
+}
+
+/*---------- Harm & Healing ----------*/
+.blades-in-the-dark.goblins.actor.pc .harm-armor{
+	max-width:100%;
+	padding-bottom:2px;
+}
+.blades-in-the-dark.goblins.actor.pc .harm-armor .character-harm{
+	width:unset;
+    -ms-flex-preferred-size:calc(100% - 7em);
+        flex-basis:calc(100% - 7em);
+	-webkit-box-flex:6;
+	    -ms-flex-positive:6;
+	        flex-grow:6;
+	-ms-flex-negative:6;
+	    flex-shrink:6;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+    -webkit-box-align:stretch;
+        -ms-flex-align:stretch;
+            align-items:stretch;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+	max-width:100%;
+}
+.blades-in-the-dark.goblins.actor.pc .heals-and-armour{
+	-ms-flex-preferred-size:5.5em;
+	    flex-basis:5.5em;
+	-webkit-box-flex:4;
+	    -ms-flex-positive:4;
+	        flex-grow:4;
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+	-webkit-box-pack:stretch;
+	    -ms-flex-pack:stretch;
+	        justify-content:stretch;
+}
+.blades-in-the-dark.goblins.actor.pc .heals-and-armour>div{
+	-ms-flex-preferred-size:50%;
+	    flex-basis:50%;
+	-webkit-box-flex:2;
+	    -ms-flex-positive:2;
+	        flex-grow:2;
+	-ms-flex-negative:2;
+	    flex-shrink:2;
+}
+.blades-in-the-dark.goblins.actor.pc .harm-body{
+    -webkit-box-pack:stretch;
+        -ms-flex-pack:stretch;
+            justify-content:stretch;
+    -ms-flex-preferred-size:2em;
+        flex-basis:2em;
+    -ms-flex-negative:2;
+        flex-shrink:2;
+    -webkit-box-flex:2;
+        -ms-flex-positive:2;
+            flex-grow:2;
+	min-width:14em;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+}
+.blades-in-the-dark.goblins.actor.pc .harm-row{
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+	margin-bottom:1px;
+    -ms-flex-preferred-size:0.75em;
+        flex-basis:0.75em;
+	-webkit-box-flex:1;
+	    -ms-flex-positive:1;
+	        flex-grow:1;
+}
+.blades-in-the-dark.goblins.actor.pc .harm-row .harm-level{
+	-ms-flex-preferred-size:0.75em;
+	    flex-basis:0.75em;
+	-ms-flex-negative:1;
+	    flex-shrink:1;
+	-webkit-box-flex:0;
+	    -ms-flex-positive:0;
+	        flex-grow:0;
+	font-weight:600;
+	text-align:center;
+}
+.blades-in-the-dark.goblins.actor.pc .harm-row .harm-detail{
+	-ms-flex-preferred-size:calc(100% - 4em);
+	    flex-basis:calc(100% - 4em);
+	-ms-flex-negative:2;
+	    flex-shrink:2;
+	-webkit-box-flex:2;
+	    -ms-flex-positive:2;
+	        flex-grow:2;
+    height:100%;
+}
+.blades-in-the-dark.goblins.actor.pc .harm-row .harm-class{
+	-ms-flex-preferred-size:4em;
+	    flex-basis:4em;
+	-ms-flex-negative:1;
+	    flex-shrink:1;
+	padding-left:3px;
+	text-transform:uppercase;
+	font-size:0.75em;
+	line-height:1;
+	font-weight:700;
+}
+.blades-in-the-dark.goblins.actor.pc .harm-row .harm-detail textarea{
+	overflow:hidden;
+}
+.blades-in-the-dark.goblins.actor.pc .harm-row:not(:first-child) .harm-detail textarea{
+	-ms-flex-preferred-size:calc(50% - 1px);
+	    flex-basis:calc(50% - 1px);
+	-ms-flex-negative:1;
+	    flex-shrink:1;
+}
+.blades-in-the-dark.goblins.actor.pc .harm-row:first-child .harm-detail textarea{
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+	-ms-flex-negative:1;
+	    flex-shrink:1;
+}
+.blades-in-the-dark.goblins.actor.pc .harm-armor .character-health-clock .blades-clock{
+    width:3em;
+    height:3em;
+    margin-left:auto;
+    margin-right:auto;
+}
+.blades-in-the-dark.goblins.actor.pc .harm-armor .character-health-clock .fa-creative-commons-zero:before{
+	font-family:var(--fa-style-family,"Font Awesome 6 Pro");
+	content:"\f021";
+	font-weight:600;
+	-webkit-transform:scaleX(-100%);
+	    -ms-transform:scaleX(-100%);
+	        transform:scaleX(-100%);
+}
+.blades-in-the-dark.goblins.actor.pc .harm-armor .character-healing>div,
+.blades-in-the-dark.goblins.actor.pc .harm-armor .character-armor-uses{
+	padding-right:4px;
+	padding-left:4px;
+	padding-bottom:4px;
+}
+.blades-in-the-dark.goblins.actor.pc .character-armor-uses{
+	text-transform:uppercase;
+	font-size:0.75em;
+	font-weight:700;
+}
+.blades-in-the-dark.goblins.actor.pc .character-armor-uses>div{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+.blades-in-the-dark.goblins.actor.pc .character-armor-uses input[type="checkbox"]{
+    width:1em;
+    height:1em;
+	margin:1px;
+}
+
+/*---------- LOWER PANEL ----------*/
+.blades-in-the-dark.goblins.actor.pc .lower nav.tabs{
+	text-transform:uppercase;
+	font-size:0.75em;
+	font-weight:600;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+}
+.blades-in-the-dark.goblins.actor.pc .lower nav.tabs>.item{
+	padding:0 4px;
+}
+.blades-in-the-dark.goblins.actor.pc .lower nav.tabs>.item:not(.active){
+	opacity:0.5;
+}
+.blades-in-the-dark.goblins.actor.pc .lower nav.tabs>.item:not(.active):hover{
+	opacity:1;
+}
+.blades-in-the-dark.goblins.actor.pc .lower nav.tabs>.item[data-tab="close"]{
+	display:none;
+}
+.blades-in-the-dark.goblins.actor.pc .lower  .tab-content{
+	width:100%;
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+}
+.blades-in-the-dark.goblins.actor.pc .lower  .tab-content h2 .item-add-popup{
+	display:inline-block;
+    margin-left:4px;
+}
+.blades-in-the-dark.goblins.actor.pc .lower :is(.label-stripe,.black-label) h2{
+    margin:unset;
+	border:unset;
+}
+.blades-in-the-dark.goblins.actor.pc .lower .tab-content :is(.label-stripe,.black-label){
+	height:2em !important;
+	padding-left:6px;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+.blades-in-the-dark.goblins.actor.pc .lower .tab-content :is(.label-stripe,.black-label) h2{
+    margin:unset;
+	border:unset;
+}
+.blades-in-the-dark.goblins.actor.pc .lower .tab-content :is(.label-stripe,.black-label)+div:not(.chara-notes):nth-child(2){
+	padding-top:0.75em;
+}
+.blades-in-the-dark.goblins.actor.pc .lower .tab-content :is(.label-stripe,.black-label) h2+span{
+	font-family:'Zilla Slab';
+}
+.blades-in-the-dark.goblins.actor.pc .lower :is(.label-stripe,.black-label) select{
+	font-size:1em;
+	font-family:'Zilla Slab';
+	height:auto;
+	margin-right:0;
+	margin-top:0;
+}
+.blades-in-the-dark.goblins.actor.pc .lower :is(.label-stripe,.black-label) select option{
+	background:#0d0e13;
+	color:#eeefff;
+}
+.blades-in-the-dark.goblins.actor.pc .lower .tab item .item-body *{
+	margin-right:unset;
+}
+.blades-in-the-dark.goblins.actor.pc .lower .tab .item .item-header{
+   -ms-flex-preferred-size:6em;
+       flex-basis:6em;
+   text-align:right;
+   -webkit-box-flex:0;
+       -ms-flex-positive:0;
+           flex-grow:0;
+    padding:0.1rem 0.3rem;
+    background:#bcbec0;
+    align-items:center;
+}
+.blades-in-the-dark.goblins.actor.pc .lower .tab .item .item-header h3{
+	border-bottom:unset;
+	font-size:1em;
+	font-weight:600;
+	margin:unset;
+    align-items:center;
+}
+.blades-in-the-dark.goblins.actor.pc .lower .tab .item .item-header h3 .item-name{
+	margin-left:unset;
+	width:unset;
+}
+.blades-in-the-dark.goblins.actor.pc .lower .tab .item .item-header h3 .item-source{
+	font-size:0.8em;
+	text-transform:uppercase;
+}
+.blades-in-the-dark.goblins.actor.pc .lower .tab .item .item-header .item-buttons{
+	font-size:0.75em;
+}
+.blades-in-the-dark.goblins.actor.pc .lower .tab .item .item-description{
+	-ms-flex-preferred-size:calc(100% - 7em);
+	    flex-basis:calc(100% - 7em);
+	-ms-flex-negative:10;
+	    flex-shrink:10;
+	-webkit-box-flex:1;
+	    -ms-flex-positive:1;
+	        flex-grow:1;
+	width:unset;
+	padding:0.1rem 0.3rem;
+}
+
+/*---------- Abilities ----------*/
+
+/*---------- Wealth ----------*/
+.blades-in-the-dark.goblins.actor.pc .coins.coins-hands{
+	width:unset;
+	-ms-flex-wrap:no-wrap;
+	    flex-wrap:no-wrap;
+}
+.blades-in-the-dark.goblins.actor.pc .coins label{
+    border-radius:20px;
+}
+
+/*---------- Effects and All-Items List ----------*/
+.blades-in-the-dark.goblins.actor.pc .effects-list .item .flex-horizontal{
+    align-items:center;
+}
+.blades-in-the-dark.goblins.actor.pc .effects-list .item{
+	padding:0.2rem;
+}
+.blades-in-the-dark.goblins.actor.pc .effects-list .item:nth-child(even){
+	background:rgba(0,0,0,0.1);
+}
+.blades-in-the-dark.goblins.actor.pc .effects-list .item .item-body{
+	margin-bottom:0;
+}
+.blades-in-the-dark.goblins.actor.pc .effects-list .item .item-name{
+	margin-left:0.3rem;
+}
+.blades-in-the-dark.goblins.actor.pc .effects-list .item .item-buttons{
+	flex-grow:0;
+}
+.blades-in-the-dark.goblins.actor.pc .effects-list .effect-name h4{
+	display:inline-block;
+	margin:0 0 0 0.3rem;
+}
+.blades-in-the-dark.goblins.actor.pc table.effects-list :is(th,td){
+	width:auto;
+    padding:0.1rem 0.3rem;
+    text-align:left;
+}
+.blades-in-the-dark.goblins.actor.pc table.effects-list tr{
+	display:flex;
+	align-items:center;
+	justify-content:flex-start;
+}
+.blades-in-the-dark.goblins.actor.pc table.effects-list :is(th,td):last-child{
+	text-align:right;
+	flex:0 0 3.5rem;
+}
+.blades-in-the-dark.goblins.actor.pc table.effects-list :is(th,td):nth-child(1){
+	display:flex;
+	align-items:center;
+	flex:0 0 calc(100% - 14.5rem);
+}
+.blades-in-the-dark.goblins.actor.pc table.effects-list :is(th,td):nth-child(2){
+	flex:0 0 5.5rem;
+}
+.blades-in-the-dark.goblins.actor.pc table.effects-list :is(th,td):nth-child(3){
+	flex:0 0 5.5rem;
+}
+
+/*---------- Contacts ----------*/
+.blades-in-the-dark.goblins.actor.pc .contacts-list .item:nth-child(even){
+	background:rgba(0,0,0,0.1);
+}
+.blades-in-the-dark.goblins.actor.pc .contacts-list .item .item-desc{
+    flex:5 5 calc(100% - 3.5rem);
+}
+.blades-in-the-dark.goblins.actor.pc .contacts-list .item-buttons{
+	flex-grow:0;
+	padding-right:0.3rem;
+}
+
+/*---------- Notes ----------*/
+.blades-in-the-dark.goblins.actor.pc .chara-notes .editor-content{
+	padding:0 0.75rem 0.75rem 0.75rem;
+}
+.blades-in-the-dark.goblins.actor.pc .chara-notes .prosemirror .editor-container{
+	margin:0;
+}
+.blades-in-the-dark.goblins.actor.pc .chara-notes .prosemirror .editor-container .editor-content{
+	position:relative;
+}
+.blades-in-the-dark.goblins.actor.pc .prosemirror menu{
+	padding:2px;
+}
+.blades-in-the-dark.goblins.actor.pc .prosemirror menu>li{
+    margin:2px;
+}
+
+/*---------- "RESPONSIVE" ----------*/
+
+/*---------- WIDE ----------*/
+.blades-in-the-dark.goblins.actor.pc .wide .landscape-wrapper{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+}
+.blades-in-the-dark.goblins.actor.pc .wide .landscape-wrapper>.upper{
+	-ms-flex-preferred-size:80%;
+	    flex-basis:80%;
+	min-width:450px;
+	margin-right:0.5em;
+	padding-right:0.5em;
+	border-right:1px dotted rgba(0,0,0,0.5);
+}
+.blades-in-the-dark.goblins.actor.pc .wide .landscape-wrapper>.lower{
+	-ms-flex-preferred-size:80%;
+	    flex-basis:80%;
+}
+
+
+/*---------- SKINNY ----------*/
+.blades-in-the-dark.goblins.actor.pc .skinny .banner-text{
+	font-size:0.9em;
+}
+
+/*---------- SUPER SKINNY ----------*/
+/*---------- Header ----------*/
+.blades-in-the-dark.goblins.actor.pc .super-skinny .header-banner .portrait{
+	-ms-flex-preferred-size:80px;
+	    flex-basis:80px;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .header-banner .portrait>img.portrait{
+	height:70px;
+	width:70px;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .banner-text{
+	font-size:0.75em;
+	-ms-flex-preferred-size:calc(100% - 80px);
+	    flex-basis:calc(100% - 80px);
+}
+
+/*---------- Status ----------*/
+.blades-in-the-dark.goblins.actor.pc .super-skinny .harm-container-alt{
+	margin-top:-1em;
+    display:block;
+}
+
+/*----------Lower Panel ----------*/
+.blades-in-the-dark.goblins.actor.pc .super-skinny .lower{
+	position:absolute;
+	bottom:0;
+	z-index:5;
+	margin-left:-8px;
+	background:#e5e5e5;
+	height:2.2em;
+	overflow:hidden;
+	-webkit-transition:height 0.3s;
+	-o-transition:height 0.3s;
+	transition:height 0.3s;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny #panel-bottom-status[value="true"]+.lower{
+	height:calc(100% - 10em);
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .lower .tabs{
+	-webkit-box-pack:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
+	background:#0d0e13;
+	color:#eeefff;
+	padding:0.1em 0;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .lower .tab-content{
+	height:100%;
+	position:relative;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .lower nav.tabs>.item{
+    padding:0.1em 0.8em;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny nav.tabs>.item[data-tab="close"]{
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+	padding:0.5em;
+	width:100%;
+	font-size:1.5em;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny #panel-bottom-status[value="true"]+.lower nav.tabs>.item[data-tab="close"]:not(.active){
+	display:initial;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .lower .tab{
+	height:calc(100% - 4rem);
+	position:relative;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .lower .tab .tab-body{
+	height:calc(100% - 2rem);
+    overflow-y:auto;
+	padding:0.75em;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .lower .tab.chara-notes .tab-body{
+	height:calc(100% - 2rem + 0.75rem);
+	padding:0;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .lower .tab .item .item-body.flex-horizontal{
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+	-webkit-box-align:stretch;
+	    -ms-flex-align:stretch;
+	        align-items:stretch;
+	margin-right:4px;
+	margin-left:4px;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .lower .tab .item .item-header h3>*{
+	display:inline;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .lower .tab .item .item-header{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-ms-flex-preferred-size:unset;
+	    flex-basis:unset;
+    width:100%;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+.blades-in-the-dark.goblins.actor.pc .super-skinny .lower .tab .item .item-description{
+	-ms-flex-preferred-size:unset;
+	    flex-basis:unset;
+	margin-left:unset;
+}
+
+
+/*---------- ULTRA SKINNY + MOBILE ----------*/
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny{
+	height:100%;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .landscape-wrapper{
+	height:calc(80% - 0.7em);
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .upper{
+	position:relative;
+	height:100%;
+	width:100%;
+	display:block;
+}
+
+/*---------- Upper Panel - Collapsible ----------*/
+.blades-in-the-dark.goblins.actor.pc .upper .panel-toggle{
+	display:none;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .upper .panel-toggle{
+	display:block;
+    position:absolute;
+    font-size:0.75em;
+	z-index:3;
+    padding:0.75em;
+	text-transform:uppercase;
+	white-space:nowrap;
+	border-radius:5px 5px 0 0;
+    width:100%;
+	text-align:center;
+	-webkit-transition:width 0.3s;
+	-o-transition:width 0.3s;
+	transition:width 0.3s;
+    -webkit-box-sizing:content-box;
+            box-sizing:content-box;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .upper .panel-toggle.left{
+    left:-0.7em;
+    background:#bcbec0;
+	-webkit-transform:rotate(90deg);
+	    -ms-transform:rotate(90deg);
+	        transform:rotate(90deg);
+	-webkit-transform-origin:bottom left;
+	    -ms-transform-origin:bottom left;
+	        transform-origin:bottom left;
+	padding:0.35em 1em 0.5em 0.8em;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .upper .panel-toggle.right{
+    right:-0.7em;
+	background:rgba(0,0,0,0.1);
+	-webkit-transform:rotate(-90deg);
+	    -ms-transform:rotate(-90deg);
+	        transform:rotate(-90deg);
+	-webkit-transform-origin:bottom right;
+	    -ms-transform-origin:bottom right;
+	        transform-origin:bottom right;
+	padding:0.35em 0.8em 0.5em 1em;
+    border-right:1px solid rgba(0,0,0,0.1);
+    border-top:1px solid rgba(0,0,0,0.1);
+    border-bottom:1px soid rgba(255,255,255,0.5);
+    border-right:1px soid rgba(255,255,255,0.5);
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny #panel-left-status[value="true"]+.upper .panel-toggle.left{
+    left:-3.7em;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny #panel-left-status[value="false"]+.upper .panel-toggle.right{
+    right:-3.7em;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny :is(.upper-left,.upper-right){
+	-webkit-transition:all 0.3s;
+	-o-transition:all 0.3s;
+	transition:all 0.3s;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .upper-left,
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .upper-right{
+	position:absolute;
+	max-width:calc(100% - 1.3em);
+	width:calc(100% - 1.3em);
+	overflow:hidden;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .upper-right{
+	right:0;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny #panel-left-status[value="false"]+.upper .upper-left{
+	left:-100%;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny #panel-left-status[value="true"]+.upper .upper-right{
+	right:-100%;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny #panel-left-status[value="true"]+.upper .upper-left{
+	left:0;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny #panel-left-status[value="false"]+.upper .upper-right{
+	right:0;
+}
+
+/*---------- Atributes Panel - Collapsible ----------*/
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .attributes{
+	margin-right:4px;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .attribute{
+	margin-top:0.5em;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .attributes-panel::before{
+	display:none;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .attributes-panel{
+	background:unset;
+	font-size:0.9em;
+	margin-top:-0.5em;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .attribute{
+	padding-bottom:0.5em;
+	background:#bcbec0;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .attributes .attributes-exp .stripe-tooth-body label{
+	width:15px;
+    height:40px;
+}
+.blades-in-the-dark.goblins.actor.pc .ultra-skinny .attributes .attributes-exp .stripe-tooth-body label[for$="-0"]{
+	top:2.5px;
+	right:2px;
+	color:#eeefff;
+}

@@ -1,0 +1,303 @@
+ol#chat-log{
+	--background-container:#e5e5e5;
+	--colour-text-inside:#2b2c31;
+	--font-primary:'Zilla Slab';
+}
+.chat-label{
+    height:auto !important;
+	font-size:1.4em; 
+}
+.blades-die-tooltip .label-stripe-chat-small{
+    font-weight:500;
+    font-style:italic;
+}
+.chat-message{
+	font-family:var(--font-primary);
+}
+.chat-message .message-content{
+	font-weight:300;
+}
+.chat-message.notice .message-content{
+	background:var(--background-container);
+}
+.chat-message.emote{
+	background:#cecece;
+}
+.chat-message.emote .message-content{
+    font-style:italic;
+}
+.chat-message .message-content :is(.chat-item,.blades-die-tooltip,.dice-roll){
+	background:var(--background-container);
+	color:var(--colour-text-inside);
+}
+.chat-message .message-header :not(.flavor-text){
+    text-transform:uppercase;
+    font-size:0.7rem;
+    font-weight:600;
+}
+
+/* Rolls & Notices */
+.chat-message .message-content :is(.blades-die-tooltip,.dice-roll){
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+}
+.chat-message .message-content .dice-roll{
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+}
+.chat-message .message-content .blades-die-tooltip{
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	padding-bottom:0.5em;
+}
+.chat-message .message-content :is(.chat-item,.blades-die-tooltip,.dice-roll) :is(p,.die):not(.roll){
+	margin:0 0.25rem;
+}
+.chat-message.whisper .message-content :is(.chat-item,.blades-die-tooltip,.dice-roll){
+	background:#e8e8ef;
+}
+.chat-message.whisper.blind .message-content :is(.chat-item,.blades-die-tooltip,.dice-roll){
+	background:#f5eaf5;
+}
+.chat-message .dice-roll :is(.dice-formula,.dice-total){
+	border:none;
+	margin:0.3rem;
+	-webkit-box-shadow:unset;
+	        box-shadow:unset;
+}
+.chat-message .dice-roll .dice-formula{
+	margin-bottom:0;
+	border-bottom:1px dashed rgba(255,255,255,0.5);
+	border-radius:3px 3px 0 0;
+}
+.chat-message .dice-roll .dice-total{
+	margin-top:0;
+	border-radius:0 0 3px 3px;
+}
+.chat-message .dice-roll .dice-tooltip:not(.blades-die-tooltip) .part-header .part-formula{
+    padding-left:0.25em;
+}
+.chat-message .dice-roll .dice-result .dice-tooltip:not(.blades-die-tooltip) ol.dice-rolls{
+    margin-left: 0;
+	border-bottom:1px dashed rgba(255,255,255,0.5);
+}
+.chat-message .flavor-text~.dice-roll .dice-formula:not(.dice-tooltip){
+	background:rgba(0, 0, 0, 0.1);
+}
+.chat-message .dice-roll .dice-tooltip:not(.blades-die-tooltip){
+	background:rgba(0,0,0,0.1);
+    border-top-color:rgba(0,0,0,0.1);
+    border-bottom-color:rgba(255,255,255,0.5);
+	margin:0 0.3rem;
+}
+.chat-message .blades-die-tooltip .label-stripe-chat{
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+}
+.chat-message .blades-die-tooltip .label-stripe-chat-small{
+    font-weight:600;
+    font-style:italic;
+	margin-bottom:unset;
+	padding-top:2px;
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+}
+.chat-message .blades-die-tooltip .die{
+	-webkit-box-ordinal-group:2;
+	    -ms-flex-order:1;
+	        order:1;
+}
+.chat-message .blades-die-tooltip .dice-rolls{
+	margin:0 -2px 0 0;
+	-webkit-box-ordinal-group:3;
+	    -ms-flex-order:2;
+	        order:2;
+}
+.chat-message .blades-die-tooltip .description{
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+	-webkit-box-ordinal-group:4;
+	    -ms-flex-order:3;
+	        order:3;
+}
+.chat-message .blades-die-tooltip .description+em{
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+    display:block;
+	background:#cecece;
+	padding:0.3rem 0.35rem;
+	-webkit-box-ordinal-group:0;
+	    -ms-flex-order:-1;
+	        order:-1;
+}
+.chat-message .message-content>.chat-item>div{
+	padding:5px;
+}
+.chat-message .message-content p:empty{
+    min-height:unset;
+    padding:unset;
+}
+.chat-message .message-header .flavor-text{
+	background:#cecece;
+	font-style:italic;
+	font-size:0.93em;
+	padding:0.3rem 0.35rem;
+}
+.chat-message.notice .message-header .flavor-text{
+	background:#999;
+	font-weight:600;
+    color:#191813;
+	text-transform:unset;
+}
+.chat-message.notice .message-header .flavor-text::after{
+	content:unset;
+}
+
+/* Item Cards */
+.chat-message .blades.chat-item>div{
+	position:relative;
+}
+.chat-message .blades.chat-item>div>div>h3{
+	text-transform:uppercase;
+    font-family:Kirsty,serif;
+    background-color:#191813;
+    color:#eeefff;
+    font-size:1.4em;
+    position:relative;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    font-weight:bold;
+    text-align:center;
+    padding:3px 5px 0px;
+	margin-bottom:0;
+	margin-top:-5px;
+	margin-left:-5px;
+	margin-right:-5px;
+	padding-left:30px;
+}
+.chat-message .blades.chat-item img{
+    width:25px;
+    height:25px;
+    float:none;
+	margin:0;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#191813;
+	border:unset;
+}
+.chat-message .blades.chat-item>div>div>h3>img{
+	height:25px;
+	width:25px;
+	margin-top:0;
+}
+
+/* Tables */
+.chat-message .message-content table{
+	background:var(--background-container);
+	border-top:1px solid var(--background-container);
+}
+.chat-message .message-content table tr:nth-child(even){
+	background:var(--background-container);
+}
+.chat-message .message-content table tr:nth-child(odd){
+	background:rgba(0, 0, 0, 0.1);
+}
+
+/* Roll Tables (which are not in fact tables but lists pretending to be tables god damnit) */
+.chat-message .message-content .table-description{
+	background:var(--background-container);
+	color:var(--colour-text-inside);
+	padding:0.3rem;
+	border-top:0;
+	font-size:1em;
+}
+.chat-message .message-content .table-description p{
+	margin:0.3rem 0;
+}
+.chat-message .table-draw .dice-roll .dice-formula{
+	margin-top:0;
+}
+.chat-message .table-draw .table-results{
+	background:var(--background-container);
+	margin-top:0;
+}
+.chat-message .table-draw .table-results .table-result{
+	padding-left:0.2em;
+	border-top:1px solid var(--background-container);
+	border-bottom:0;
+}
+.chat-message .table-draw .table-results .table-result img{
+	border:0;
+}
+.chat-message .table-draw .table-results .table-result:nth-child(even){
+	background:var(--background-container);
+}
+.chat-message .table-draw .table-results .table-result:nth-child(odd){
+	background:rgba(0, 0, 0, 0.1);
+}
+.chat-message .table-draw .table-results .table-result img.result-image{
+	border:0;
+	-webkit-box-flex:0;
+	    -ms-flex:0 0 16px;
+	        flex:0 0 16px;
+	width:16px;
+	height:16px;
+	background:rgba(0,0,0,0.5);
+}
+
+/* Burble support! */
+.chat-message.burble:not(.whisper) .message-header{
+	color:#bcbec0;
+}
+.chat-message.burble.emote{
+	background:unset;
+}
+.chat-message.burble.emote .message-content{
+	background:var(--background-container);
+}
+.chat-message.burble .message-content :is(.chat-item,.blades-die-tooltip,.dice-roll) :is(p,.dice-rolls,.die):not(.roll),
+.chat-message.burble .dice-roll :is(.dice-formula,.dice-total),
+.chat-message.burble .dice-roll .dice-tooltip:not(.blades-die-tooltip){
+    margin:0;
+}
+.chat-message.burble .table-draw .table-results{
+	margin-top:0.3rem;
+}
+.chat-message.burble .message-content .table-description{
+	padding-top:0;
+}
+.chat-message.burble .message-content .chat-item{
+	margin:-5px;
+}
+.chat-message.burble .blades-die-tooltip .dice-rolls{
+    padding-bottom:0;
+}
+.chat-message.burble .blades-die-tooltip :is(.label-stripe-chat,.label-stripe-chat-small,.description+em){
+    -ms-flex-preferred-size:calc(100% + 10px);
+        flex-basis:calc(100% + 10px);
+}
+
+/* Chat Portrait support! */
+.message img.chat-portrait-message-portrait-generic{
+	margin-bottom:0;
+}
+h4.chat-portrait-flexrow{
+    display:none;
+	margin:0;
+}

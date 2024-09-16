@@ -1,0 +1,496 @@
+<form class="{{cssClass}} actor-sheet" autocomplete="off" id="chara_sheet">
+{{log this}}
+	<section id="character-{{_id}}-name-alias" class="flex-horizontal header-banner">
+
+		<div class="portrait">
+			<img src="{{img}}" data-edit="img" height="90" width="90" class="portrait" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.change'}}" />
+		</div>
+		
+		<div class="flex-horizontal banner-text">
+		
+			<div class="handles">
+			
+				<div id="character-{{_id}}-alias-box" class="autosize alias">{{!--
+					--}}<input type="text" id="char_alias_input" class="alias" name="system.alias" placeholder="alias" value="{{system.alias}}" onClick="this.select();" tabindex=0 data-tooltip="{{localize 'BITD.Alias'}} ({{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.change'}})">{{!--
+						--}}<span id="char_alias_display" class="ruler">{{system.alias}}</span>{{!--
+					--}}<label for="character-{{_id}}-alias">{{localize "BITD.Alias"}}</label>{{!--
+				--}}</div>
+
+				<div id="character-{{_id}}-name-box" class="autosize name">{{!--
+					--}}<input type="text" id="char_name_input" class="name" name="name" value="{{name}}" placeholder="name" onClick="this.select();" tabindex=0  data-tooltip="{{localize 'BITD.Name'}} ({{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.change'}})">{{!--
+						--}}<span id="char_name_display" class="ruler">{{name}}</span>{{!--
+					--}}<label for="character-{{_id}}-name">{{localize "BITD.Name"}}</label>{{!--
+				--}}</div>
+				
+			</div><!-- handles	-->
+		  
+			<div class="job">
+
+				<div class="item-block label-under crew">
+					{{#each system.crew as |item id|}}
+						{{#unless (eq item.name undefined)}}
+							<div class="item flex-horizontal" data-item-id="{{item.id}}" data-item-type="{{item.type}}">
+								<div class="open-friend flex-horizontal" data-tooltip="{{localize 'TYPES.Actor.crew'}} ({{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.open'}})">
+									<div>
+										<a class="open-friend item-name">{{item.name}}</a>
+									</div>
+								</div>
+								<div class="item-buttons flex-vertical">
+									<a class="item-control crew-delete" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+									<a style="visibility:hidden" class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+								</div>
+							</div>
+						{{/unless}}
+					{{/each}}
+					<div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="crew" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.choose'}} {{localize 'TYPES.Actor.crew'}}">{{localize "TYPES.Actor.crew"}}</a></div> 
+				</div>
+				
+				<div class="item-block label-under playbook">
+					{{#each items as |item id|}}
+						{{#if (eq item.type "class")}}
+							<div class="item flex-horizontal" data-item-id="{{item._id}}">
+								<div class="item-body flex-horizontal" data-tooltip="{{localize 'GoblinStyle.Playbook'}} ({{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.change'}} )">
+									<div class="item-name">{{item.name}}</div>
+								</div>
+								<div class="item-buttons flex-vertical">
+									<a class="item-control item-delete" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+									<a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+								</div>
+							</div>
+						{{/if}}
+					{{/each}}
+					<div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="class" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.choose'}} {{localize 'GoblinStyle.Playbook'}}">{{localize "GoblinStyle.Playbook"}}</a></div>
+				</div>
+				
+			</div><!-- job	-->
+		</div><!-- banner-text	-->
+
+	</section>
+	
+	<div class="landscape-wrapper">
+	
+	<input id="panel-left-status" type="hidden" name="panels.left" data-item-id="panels.left" value="{{panels.left}}" />
+	<section id="upper" class="upper flex-horizontal">
+		<div id="upper-left-toggle" class="panel-toggle left"><span class="arrow-open fa fa-angle-double-up" data-tooltip="{{localize 'GoblinStyle.Hint.ToggleSkills'}}"></span> Skills </div>
+		<div id="upper-right-toggle" class="panel-toggle right" data-tooltip="{{localize 'GoblinStyle.Hint.ToggleStatus'}}">Status <span class="arrow-open fa fa-angle-double-up"></span></div>
+	
+		<div id="upper-left" class="upper-left flex-column tooth-bg attributes-panel">
+			{{!-- Attributes --}}
+			{{> "modules/fox-goblins-in-the-code/templates/parts/attributes.html" actor=actor}}
+		</div>
+		
+		<section id="upper-right" class="upper-right">
+		
+			<div id="character-{{_id}}-traits" class="flex-column personal">
+				<div class="item-block">
+					<div class="item-header flex-horizontal">
+						<span class="item-class-label">{{localize "GoblinStyle.Look"}}</span>
+						<div class="item flex-horizontal" data-item-id="system.look">
+							<div class="item-body flex-horizontal">
+							</div>
+						</div>
+					</div>
+					<input type="text" class="item-desc" name="system.look" placeholder="look" value="{{system.look}}" />				
+				</div>
+				
+				<div class="item-block">
+					<div class="item-header flex-horizontal">
+						<span class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="heritage" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.choose'}} {{localize 'BITD.Heritage'}}">{{localize "BITD.Heritage"}}</a></span>
+						{{#each items as |item id|}}
+							{{#if (eq item.type "heritage")}}
+							{{log item}}
+								<div class="item flex-horizontal" data-item-id="{{item._id}}">
+									<span class="item-body item-name" data-tooltip="{{localize 'BITD.Heritage'}} ({{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.editDesc'}})">{{item.name}}</span>
+									<a class="item-control item-delete" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+									<a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+								</div>
+								<div class="item-desc item-edit" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.editDesc'}}">{{{item.system.description}}}</div>
+							{{/if}}
+						{{/each}}
+					</div>
+				</div>
+
+				<div class="item-block">
+					<div class="item-header flex-horizontal">
+						<span class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="background" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.choose'}} {{localize 'BITD.Background'}}">{{localize "BITD.Background"}}</a></span>
+						{{#each items as |item id|}}
+							{{#if (eq item.type "background")}}
+								<div class="item flex-horizontal" data-item-id="{{item._id}}">
+									<span class="item-body item-name" data-tooltip="{{localize 'BITD.Background'}} ({{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.editDesc'}})">{{item.name}}</span>
+									<a class="item-control item-delete" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+									<a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+								</div>
+								<div class="item-desc item-edit" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.editDesc'}}">{{{item.system.description}}}</div>
+							{{/if}}
+						{{/each}}
+					</div>
+				</div>
+
+				<div class="item-block">
+					<div class="item-header flex-horizontal">
+						<span class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="vice" data-item-type="background" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.choose'}} {{localize 'BITD.Vice'}}">{{localize "BITD.Vice"}}</a></span>
+						{{#each items as |item id|}}
+							{{#if (eq item.type "vice")}}
+								<div class="item flex-horizontal" data-item-id="{{item._id}}">
+									<span class="item-body item-name" data-tooltip="{{localize 'BITD.Vice'}} ({{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.editDesc'}})">{{item.name}}</span></span>
+									<a class="item-control item-delete" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+									<a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+								</div>
+								<div class="item-desc item-edit" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.editDesc'}}">{{{item.system.description}}}</div>
+							{{/if}}
+						{{/each}}
+					</div>
+				</div>
+
+			</div><!-- personal -->
+			
+			<div id="status" class="status">
+				{{!-- Stress and Trauma --}}
+				<div id="character-{{_id}}-stress-trauma" class="section big-teeth-section stress-trauma flex-horizontal">
+					<div id="character-{{_id}}-stress" class="big-teeth character-stress">
+					{{#multiboxes system.stress.value}}
+
+						<input type="radio" class="teeth-header" id="character-{{_id}}-stress-0" name="system.stress.value" value="0" dtype="Radio" />
+						<label class="black-label teeth-header" for="character-{{_id}}-stress-0" data-tooltip="{{localize 'GoblinStyle.Hint.Reset'}} {{localize 'GoblinStyle.Hint.stressTrack'}}">{{localize system.stress.name}}</label>
+
+						{{#times_from 1 system.stress.max}}
+							<label for="character-{{../_id}}-stress-{{this}}" data-tooltip="{{localize 'GoblinStyle.Hint.UpdateStress'}}"></label>
+							<input type="radio" id="character-{{../_id}}-stress-{{this}}" name="system.stress.value" value="{{this}}"
+							dtype="Radio" />
+						{{/times_from}}
+
+					{{/multiboxes}}
+
+					</div>
+					<div class="trauma flex-horizontal">
+						<div id="character-{{_id}}-trauma-container" class="small-teeth-container trauma-container">
+							{{#traumacounter system.trauma.list}}
+								<div id="character-{{_id}}-trauma" class="small-teeth-wrap">
+									<label class="black-label" for="character-{{_id}}-trauma-counter-0">{{localize system.trauma.name}}</label>
+									<div id="character-{{_id}}-trauma-teeth" class="small-teeth">
+										<input type="radio" id="character-{{_id}}-trauma-counter-0" name="system.trauma.value" value="0">
+
+										{{#times_from 1 system.trauma.max}}
+										<input type="radio" id="character-{{../_id}}-trauma-counter-{{this}}" name="system.trauma.value" value="{{this}}" disabled>
+										<label for="character-{{../_id}}-trauma-counter-{{this}}"></label>
+										{{/times_from}}
+									</div>
+								</div>
+							{{/traumacounter}}
+						</div>
+
+						<div id="character-{{_id}}-trauma-list" class="trauma-list" tabindex="0" data-tooltip="{{localize 'GoblinStyle.Hint.AddTrauma'}}">
+							<a class="toggle" data-tooltip="Expand list"><i class="fas fa-plus"></i></a>
+							<label data-tooltip="{{localize 'GoblinStyle.Hint.ToggleTrauma'}}">
+								<input type="checkbox" data-dType="Boolean" name="system.trauma.list.cold" value="cold" {{checked system.trauma.list.cold}}>
+								<span class="checkmark">{{localize system.trauma.options.[0]}}</span>
+							</label>
+							<label data-tooltip="{{localize 'GoblinStyle.Hint.ToggleTrauma'}}">
+								<input type="checkbox" data-dType="Boolean" name="system.trauma.list.haunted" value="haunted" {{checked system.trauma.list.haunted}}>
+								<span class="checkmark">{{localize system.trauma.options.[1]}}</span>
+							</label>
+							<label data-tooltip="{{localize 'GoblinStyle.Hint.ToggleTrauma'}}">
+								<input type="checkbox" data-dType="Boolean" name="system.trauma.list.obsessed" value="obsessed" {{checked system.trauma.list.obsessed}}>
+								<span class="checkmark">{{localize system.trauma.options.[2]}}</span>
+							</label>
+							<label data-tooltip="{{localize 'GoblinStyle.Hint.ToggleTrauma'}}">
+								<input type="checkbox" data-dType="Boolean" name="system.trauma.list.paranoid" value="paranoid" {{checked system.trauma.list.paranoid}}>
+								<span class="checkmark">{{localize system.trauma.options.[3]}}</span>
+							</label>
+							<label data-tooltip="{{localize 'GoblinStyle.Hint.ToggleTrauma'}}">
+								<input type="checkbox" data-dType="Boolean" name="system.trauma.list.reckless" value="reckless" {{checked system.trauma.list.reckless}}>
+								<span class="checkmark">{{localize system.trauma.options.[4]}}</span>
+							</label>
+							<label data-tooltip="{{localize 'GoblinStyle.Hint.ToggleTrauma'}}">
+								<input type="checkbox" data-dType="Boolean" name="system.trauma.list.soft" value="soft" {{checked system.trauma.list.soft}}>
+								<span class="checkmark">{{localize system.trauma.options.[5]}}</span>
+							</label>
+							<label data-tooltip="{{localize 'GoblinStyle.Hint.ToggleTrauma'}}">
+								<input type="checkbox" data-dType="Boolean" name="system.trauma.list.unstable" value="unstable" {{checked system.trauma.list.unstable}}>
+								<span class="checkmark">{{localize system.trauma.options.[6]}}</span>
+							</label>
+							<label data-tooltip="{{localize 'GoblinStyle.Hint.ToggleTrauma'}}">
+								<input type="checkbox" data-dType="Boolean" name="system.trauma.list.vicious" value="vicious" {{checked system.trauma.list.vicious}}>
+								<span class="checkmark">{{localize system.trauma.options.[7]}}</span>
+							</label>
+						</div>
+					</div>{{!-- [end] trauma --}}
+
+				</div>{{!-- [end] Stress and Trauma --}}
+
+				{{!-- Harm, Healing and Armor --}}
+				<div id="character-{{_id}}-harm-armor" class="flex-horizontal harm-armor harm-container-default">
+				
+					<div id="character-{{_id}}-character-harm" class="character-harm">
+						<h2 class="black-label">{{localize "BITD.Harm"}}</h2>
+						
+						<div class="flex-horizontal harm-body">
+							<div class="harm-3 flex-horizontal harm-row">
+								<label class="harm-level">3</label>
+								<div class="harm-detail flex-horizontal">
+									<textarea id="character-{{_id}}-harm-3-1" name="system.harm.heavy.one" rows="1">{{system.harm.heavy.one}}</textarea>
+								</div>
+								<div class="harm-class">{{localize "BITD.NeedHelp"}}</div>
+							</div>
+						
+							<div class="harm-2 flex-horizontal harm-row">
+								<label class="harm-level">2</label>
+								<div class="harm-detail flex-horizontal">
+									<textarea id="character-{{_id}}-harm-2-1" name="system.harm.medium.one" rows="1">{{system.harm.medium.one}}</textarea>
+									<textarea id="character-{{_id}}-harm-2-2" name="system.harm.medium.two" rows="1">{{system.harm.medium.two}}</textarea>
+								</div>
+								<div class="harm-class">-1D</div>
+							</div>
+						
+							<div class="harm-1 flex-horizontal harm-row">
+								<label class="harm-level">1</label>
+								<div class="harm-detail flex-horizontal">
+									<textarea id="character-{{_id}}-harm-1-1" name="system.harm.light.one" rows="1">{{system.harm.light.one}}</textarea>
+									<textarea id="character-{{_id}}-harm-1-2" name="system.harm.light.two" rows="1">{{system.harm.light.two}}</textarea>
+								</div>
+								<div class="harm-class">{{localize "BITD.LessEffect"}}</div>
+							</div>
+						</div>
+					</div><!-- harm -->
+					
+					<div id="heals-and-armour" class="heals-and-armour flex-horizontal">
+					
+						<div id="character-{{_id}}-character-healing" class="character-healing">
+							<h2 class="black-label">{{localize "BITD.Healing"}}</h2>
+							<div id="character-{{_id}}-health-clock" class="character-health-clock">
+								{{{blades-clock "system.healing-clock" 4 system.healing-clock _id}}}
+							</div>
+						</div><!-- healing -->
+						
+						<div id="character-{{_id}}-character-armour" class="character-armour">
+							<h2 class="black-label">{{localize "BITD.Armor"}}</h2>
+							<div rowspan="3" id="character-{{_id}}-armor-uses" class="character-armor-uses">
+								<div>
+									<label for="character-{{_id}}-armor-uses-armor">{{localize "BITD.Armor"}}</label>
+									<input id="character-{{_id}}-armor-uses-armor" type="checkbox" name="system.armor-uses.armor" {{checked system.armor-uses.armor}}>
+								</div>
+								<div>
+									<label for="character-{{_id}}-armor-uses-heavy">{{localize "BITD.Heavy"}}</label>
+									<input id="character-{{_id}}-armor-uses-heavy" type="checkbox" name="system.armor-uses.heavy" {{checked system.armor-uses.heavy}}>
+								</div>
+								<div>
+									<label for="character-{{_id}}-armor-uses-special">{{localize "BITD.Special"}}</label>
+									<input id="character-{{_id}}-armor-uses-special" type="checkbox" name="system.armor-uses.special" {{checked system.armor-uses.special}}>
+								</div>
+							</div>
+						</div><!-- armour -->
+					
+					</div><!-- heals-and-armour -->
+					
+				</div>{{!-- [end] Harm, Healing and Armor --}}
+				
+			</div><!-- status -->
+			
+		</section><!-- upper-right -->
+		
+	</section><!-- upper -->
+	
+	{{!-- EXTRA Harm Section for Super-Skinny View Only --}}
+	<div id="character-{{_id}}-harm-ex" class="flex-horizontal harm-armor super-skinny-only harm-container-alt">
+		{{!-- Harm section should be transplanted here when view is super-skinny--}}
+	</div><!-- Harm EX -->
+
+	{{!-- Tabs --}}
+	<input id="panel-bottom-status" type="hidden" name="panels.bottom" data-item-id="panels.bottom" value="{{panels.bottom}}" />
+	<section id="lower-panel" class="lower">
+
+	<div class="tab-content">
+
+		{{!-- Nav menu --}}
+		<nav class="tabs flex-horizontal">
+		<a id="tab-close" class="item fa fa-angle-double-down panel-toggle lower-panel-toggle opener" data-tab="close" data-tooltip="{{localize 'GoblinStyle.Hint.ToggleLower'}}">&#xfeff;</a>
+		<a id="tab-button-abilities" class="item panel-toggle lower-panel-toggle" data-tab="abilities" data-tooltip="{{localize 'GoblinStyle.Hint.ToggleAbilities'}}">{{localize "BITD.Abilities"}}</a>
+		<a id="tab-button-loadout" class="item panel-toggle lower-panel-toggle" data-tab="loadout" data-tooltip="{{localize 'GoblinStyle.Hint.ToggleLoadout'}}">{{localize "BITD.Loadout"}}</a>
+		<a id="tab-button-contacts" class="item panel-toggle lower-panel-toggle" data-tab="contacts" data-tooltip="{{localize 'GoblinStyle.Hint.ToggleContacts'}}">{{localize 'BITD.Contacts'}}</a>
+		<a id="tab-button-wealth" class="item panel-toggle lower-panel-toggle" data-tab="wealth" data-tooltip="{{localize 'GoblinStyle.Hint.ToggleWealth'}}">{{localize "GoblinStyle.Wealth"}}</a>
+		<a id="tab-button-notes" class="item panel-toggle lower-panel-toggle" data-tab="notes" data-tooltip="{{localize 'GoblinStyle.Hint.ToggleNotes'}}">{{localize "BITD.Notes"}}</a>
+		<a id="tab-button-effects" class="item panel-toggle lower-panel-toggle" data-tab="effects" data-tooltip="{{localize 'GoblinStyle.Hint.ToggleEffects'}}">{{localize "BITD.Effects"}}</a>
+		<a id="tab-button-all" class="item panel-toggle lower-panel-toggle" data-tab="all-character-items" data-tooltip="{{localize 'GoblinStyle.Hint.ToggleItems'}}">{{localize "BITD.AllItems"}}</a>
+		</nav>
+
+		<div id="character-{{_id}}-abilities" class="tab abilities" data-tab="abilities">
+			<div class="label-stripe">
+			  <h2>
+				  <label for="character-{{_id}}-experience-0">{{localize "BITD.Abilities"}}</label>
+				  <a class="item-add-popup" data-item-type="ability" data-tooltip="{{localize 'BITD.AddAbility'}}"><i class="fas fa-plus-square"></i></a>
+			  </h2>
+			  <div id="character-{{_id}}-experience" class="teeth-experience">
+				{{#multiboxes system.experience}}
+				<label for="character-{{_id}}-experience-0" data-tooltip="{{localize 'GoblinStyle.Hint.Reset'}} {{localize 'GoblinStyle.Hint.XPTrack'}}"><i class="fa fa-refresh nullifier"></i></label>
+				<input type="radio" id="character-{{_id}}-experience-0" name="system.experience" value="0" dtype="Radio">
+				{{#times_from 1 system.experience_max}}
+				<label for="character-{{_id}}-experience-{{this}}" data-tooltip="{{localize 'GoblinStyle.Hint.UpdateXP'}}"></label>
+				<input type="radio" id="character-{{_id}}-experience-{{this}}" name="system.experience" value="{{this}}" dtype="Radio">
+				{{/times_from}}
+				{{/multiboxes}}
+			  </div>
+			</div>
+
+			<div id="character-{{_id}}-abilities-list" class="tab-body item-list abilities-list">
+				{{#each items as |item id|}}
+					{{#if (eq item.type "ability")}}
+						<div class="item" data-item-id="{{item._id}}" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.editItem'}}">
+							<div class="item-header flex-horizontal">
+								<h3 class="item-body">
+									<span class="item-name">{{item.name}}</span>
+									{{#if item.system.class}}
+										<span class="item-source">({{item.system.class}})</span>
+									{{/if}}
+								</h3>
+								<div class="item-buttons">
+									<a class="item-control item-delete" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+									<a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+								</div>
+							</div>
+							<div class="item-description item-body">
+								{{{item.system.description}}}
+							</div>
+						</div>
+					{{/if}}
+				{{/each}}
+				<div class="item-class-label"><a class="item-add-popup" data-item-type="ability">{{localize "BITD.AddAbility"}}</a></div>
+			</div>
+		</div>
+
+		{{!-- Loadout Tab --}}
+		<div id="character-{{_id}}-loadout" class="tab loadout" data-tab="loadout">
+			<div class="label-stripe">
+				<h2>{{localize "BITD.Loadout"}} <a class="item-add-popup" data-item-type="item" data-tooltip="{{localize 'BITD.AddItem'}}"><i class="fas fa-plus-square"></i></a></h2>
+				<span>{{system.loadout}}/{{localize system.load_level}} </span>
+				<div class="dropdown">
+					<select name="system.selected_load_level">
+					{{selectOptions system.load_levels selected=system.selected_load_level localize=true}}
+					</select>
+				</div>
+			</div>
+			
+			<div id="character-{{_id}}-loadout-list" class="tab-body item-list loadout-list">
+				{{#each items as |item id|}}
+					{{#if (eq item.type "item")}}
+						<div class="item" data-item-id="{{item._id}}" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.editItem'}}">
+							<div class="item-header flex-horizontal">
+								<h3 class="item-body">
+									<span class="item-name">{{item.name}}</span>
+									{{#if item.system.class}}
+										<span class="item-source">({{item.system.class}})</span>
+									{{/if}}
+								</h3>
+								<div class="item-buttons">
+									<a class="item-control item-delete" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+									<a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+								</div>
+							</div>
+							<div class="item-description item-body">{{{item.system.description}}}</div>
+						</div>
+					{{/if}}
+				{{/each}}
+				<div class="item-class-label"><a class="item-add-popup" data-item-type="item">{{localize "BITD.AddItem"}}</a></div>
+			</div>
+		</div>
+		
+		{{!-- Wealth --}}
+		<div id="character-{{_id}}-wealth" class="tab wealth" data-tab="wealth">
+			<div class="label-stripe">
+				<h2>{{localize "GoblinStyle.Wealth"}}</h2>
+			</div>
+			
+			<div id="character-{{_id}}-wealth" class="tab-body wealth">
+				{{> "systems/blades-in-the-dark/templates/parts/coins.html" actor=actor}}
+			</div>
+		</div>
+
+		{{!-- Notes --}}
+		<div id="character-{{_id}}-notes" class="tab chara-notes" data-tab="notes">
+			<div class="label-stripe">
+				<h2>{{localize "BITD.Notes"}}</h2>
+			</div>
+			
+			<div id="character-{{_id}}-notes" class="tab-body chara-notes">
+				{{editor CharaDescription content=system.description target="system.description" button=true owner=owner editable=editable engine="prosemirror"}}
+			</div>			
+		</div>
+
+		{{!-- Contacts --}}
+		<div id="character-{{_id}}-contacts" class="tab contacts" data-tab="contacts">
+			<div class="label-stripe flex-horizontal">
+				<h2>{{localize system.acquaintances_label}}</h2>
+				<a class="import-contacts" data-tooltip="{{localize 'BITD.ImportPlaybookContacts'}}"><i class="fa-solid fa-file-import"></i></a>
+			</div>
+			
+			{{#if system.acquaintances}}
+				<div id="character-{{_id}}-contacts-list" class="tab-body item-list contacts-list">
+				{{#each system.acquaintances as |item id|}}
+					<div class="item flex-horizontal" data-item-id="{{item.id}}" data-item-type="{{item.type}}">
+						<div class="acquaintance" data-acquaintance="{{this.id}}">
+							<i data-acquaintance="{{this.id}}" data-tooltip="{{localize 'GoblinStyle.Hint.CycleStatus'}}" class="standing-toggle fas{{!--
+							--}}{{#if (eq this.standing 'friend' )}}
+								fa-caret-up green-icon
+							{{else if (eq this.standing 'rival')}}
+								fa-caret-down red-icon
+							{{else}}
+								fa-minus
+							{{/if}}"></i>
+						</div>
+						<span class="item-desc acquaintance-summary" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.editItem'}}"><a class="open-friend"><strong>{{this.name}}</strong>, {{this.description_short}}</a></span>
+						<div class="item-buttons">
+							<a class="acquaintance-delete item-control" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+						</div>
+					</div>
+				{{/each}}
+				</div>
+			{{/if}}
+		</div>
+
+		{{!-- Active Effects --}}
+		<div id="character-{{_id}}-effects" class="tab effects" data-tab="effects">
+			<div class="label-stripe">
+				<h2>{{localize "BITD.Effects"}}</h2>
+			</div>
+			
+			<div id="character-{{_id}}-effects-list" class="tab-body item-list effects-list">
+				{{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}
+			</div>
+		</div>
+
+		{{!-- Full Item List --}}
+		<div id="character-{{_id}}-items" class="tab all-items" data-tab="all-character-items">
+			<div class="label-stripe">
+				<h2>{{localize "BITD.AllItems"}}</h2>
+			</div>
+
+			<div id="character-{{_id}}-effects-list" class="tab-body item-list effects-list">
+				{{#each items as |item id|}}
+					<div class="item flex-horizontal" data-item-id="{{item._id}}">
+						<div class="item-body item-sheet-open flex-horizontal" data-tooltip="{{localize 'GoblinStyle.Hint.ClickTo'}} {{localize 'GoblinStyle.Hint.editItem'}}">
+							<img src="{{item.img}}" data-tooltip="{{item.name}}" width="24" height="24"/>
+							<div class="item-name">{{item.name}}</div>
+						</div>
+						<div class="item-buttons">
+							<a class="item-control item-delete" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+							<a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+
+    </div>
+  </section>
+
+	</div><!-- landscape-wrapper -->
+
+</form>
+
+<script>
+	char_name_input.oninput = function() {
+		char_name_display.innerHTML = char_name_input.value;
+	};
+	char_alias_input.oninput = function() {
+		char_alias_display.innerHTML = char_alias_input.value;
+	};
+</script>
