@@ -5,7 +5,7 @@
 Aesthetic enhancements for Blades in the Dark on Foundry VTT.
 Fox has burrowed into your BitD game and is customising a whole bunch of interface elements to suit her tastes! The tweaks also have an eye toward enhanced accessibility and cross-device compatibility.
 * **Author**: [FoxLee](https://github.com/FoxLee)
-* **Contributors**: Contains code based on the existing [BitD System for Foundry VT](https://github.com/Dez384/foundryvtt-blades-in-the-dark).
+* **Contributors**: Contains code based on the existing [BitD System for Foundry VT](https://github.com/Dez384/foundryvtt-blades-in-the-dark) and reuses some UI graphics.
 * **Foundry VTT Compatibility**: v11.x (no v12 compatibility yet)
 * **System Compatibility**: [Blades in the Dark](https://foundryvtt.com/packages/blades-in-the-dark) v5.3+ (untested with older versions, but may work)
 * **Languages**: [en-AU](https://github.com/FoxLee/fvtt-locale-en-au), en-US
